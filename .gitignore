@@ -1,6 +1,6 @@
 # Hugo build output
-blog/public/
-blog/resources/
+public/
+resources/
 
 # Hugo cache
 .hugo_build.lock

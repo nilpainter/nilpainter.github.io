@@ -64,7 +64,6 @@ jobs:
           echo "Hugo: $(hugo version)"
           echo "Node.js: $(node --version)"
       - name: Install Node.js dependencies
-        working-directory: ./blog
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
       - name: Configure Git
@@ -79,7 +78,6 @@ jobs:
           restore-keys:
             hugo-
       - name: Build the site
-        working-directory: ./blog
         run: |
           hugo \
             --gc \
@@ -95,7 +93,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./blog/public
+          path: ./public
   deploy:
     environment:
       name: github-pages
