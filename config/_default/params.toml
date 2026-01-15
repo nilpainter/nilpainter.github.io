@@ -21,8 +21,8 @@ mainSections = ["blog", "projects"]
   layout = "background"
   homepageImage = "img/studio.jpg"
   showRecent = true
-  showRecentItems = 10
-  showMoreLink = true
+  showRecentItems = 20
+  showMoreLink = false
   showMoreLinkDest = "/blog"
   cardView = false
   cardViewScreenWidth = false
@@ -45,6 +45,7 @@ mainSections = ["blog", "projects"]
   showTaxonomies = true
   showWordCount = false
   showComments = false
+  seriesOpened = true
 
 # List settings
 [list]
@@ -60,13 +61,13 @@ mainSections = ["blog", "projects"]
 # Taxonomy
 [taxonomy]
   showTermCount = true
-  showHero = true
-  heroStyle = "background"
+  showHero = false
+  heroStyle = "basic"
   showBreadcrumbs = false
   showViews = false
   showLikes = false
   showTableOfContents = false
-  cardView = true
+  cardView = false
 
 # Footer
 [footer]
