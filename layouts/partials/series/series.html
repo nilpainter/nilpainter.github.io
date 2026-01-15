@@ -1,0 +1,23 @@
+{{ if .Params.series }}
+  <div class="mt-8 mb-5 rounded-lg ms-0 ps-0">
+    <h2 class="text-2xl font-bold mb-4 text-neutral-800 dark:text-neutral-100">
+      Updates
+    </h2>
+    {{ $seriesName := strings.ToLower (index .Params.series 0) }}
+    <div class="space-y-3">
+      {{ range $post := sort (index .Site.Taxonomies.series $seriesName) "Date" "desc" }}
+        {{ if ne $post.Permalink $.Page.Permalink }}
+          <div class="border-l-2 border-primary-400 dark:border-primary-600 pl-4 py-2">
+            <a href="{{ $post.RelPermalink }}" class="text-lg hover:underline">
+              {{ $post.Title }}
+            </a>
+            <div class="text-sm text-neutral-600 dark:text-neutral-400">
+              {{ $post.Date.Format "January 2, 2006" }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+

@@ -37,15 +37,17 @@ mainSections = ["blog", "projects"]
   showHero = true
   heroStyle = "background"
   layoutBackgroundHeaderSpace = true
-  showBreadcrumbs = true
+  showBreadcrumbs = false
   showDraftLabel = true
   showEdit = false
   showSummary = true
-  showTableOfContents = true
+  showTableOfContents = false
   showTaxonomies = true
   showWordCount = false
   showComments = false
   seriesOpened = true
+  showRelatedContent = true
+  relatedContentLimit = 10
 
 # List settings
 [list]
