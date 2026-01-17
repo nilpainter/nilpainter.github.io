@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 4rem 3rem;">
+  
+  {{/* Page Header */}}
+  <div style="margin-bottom: 4rem; text-align: left;">
+    <h1 style="font-family: Georgia, serif; font-size: 3rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem; font-style: italic;">
+      {{ .Title }}
+    </h1>
+    {{ if .Params.description }}
+    <p style="color: #5a5a5a; font-size: 1.125rem; line-height: 1.7; max-width: 42rem; font-family: Georgia, serif;">
+      {{ .Params.description }}
+    </p>
+    {{ end }}
+  </div>
+
+  {{/* Projects List */}}
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 3rem;">
+    {{ range .Pages }}
+      <article style="background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e8e4df; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <a href="{{ .RelPermalink }}" style="display: block; color: inherit; text-decoration: none;">
+          {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+          {{ else }}
+            <div style="width: 100%; height: 280px; background: linear-gradient(135deg, #d4c4b0 0%, #b5a48f 100%);"></div>
+          {{ end }}
+          
+          <div style="padding: 2rem;">
+            <h2 style="font-family: Georgia, serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.75rem; color: #2d2d2d; line-height: 1.3;">
+              {{ .Title }}
+            </h2>
+            
+            {{ if .Summary }}
+            <p style="color: #5a5a5a; font-size: 0.95rem; line-height: 1.7; font-style: italic; font-family: Georgia, serif;">
+              "{{ .Summary | truncate 150 }}"
+            </p>
+            {{ end }}
+          </div>
+        </a>
+      </article>
+    {{ end }}
+  </div>
+
+</div>
+
+{{ end }}
+
