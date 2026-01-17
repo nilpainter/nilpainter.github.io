@@ -86,107 +86,160 @@ article, .card {
 code, pre {
   background-color: var(--color-code-bg);
   color: var(--color-code-fg);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
-/* Better Typography */
+pre {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+/* Better Typography - Light and Airy */
 h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 
 h1 {
   font-weight: 200;
   letter-spacing: -0.03em;
+  margin-top: 0;
 }
 
 h2 {
   font-weight: 300;
+  font-size: 1.875rem;
+  margin-top: 3rem;
 }
 
-/* More spacious layout */
+/* Consistent Spacing System */
 article {
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 .article-content {
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 2rem;
   line-height: 1.8;
   margin: 0 auto;
+  max-width: 70ch;
 }
 
-/* Extra padding for single post/project pages */
 #single_header {
-  padding: 1rem 1.5rem;
+  padding: 2rem 2rem 1rem;
   margin-bottom: 2rem;
 }
 
-/* Content wrapper spacing */
-.min-w-0.min-h-0.max-w-fit {
-  padding: 0 1rem;
+section {
+  padding: 3rem 2rem;
 }
 
-.max-w-prose {
-  padding: 0 1.5rem;
+/* Soft, Rounded Containers */
+.border-l-4,
+.bg-primary-50 {
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem !important;
+  margin: 2rem 0 !important;
+  border: none !important;
+  background: rgba(254, 128, 25, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Update sections - Softer styling */
+.mt-12 {
+  margin-top: 4rem !important;
+  padding: 0 !important;
+}
+
+.mb-8 {
+  margin-bottom: 3rem !important;
+}
+
+/* Section headers - Less harsh */
+h2.border-b-2 {
+  border-bottom: none !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 2rem !important;
+  position: relative;
+}
+
+h2.border-b-2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 4rem;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-primary-500), transparent);
+  border-radius: 2px;
+}
+
+/* List items - Cards instead of borders */
+.border-l-2 {
+  border: none !important;
+  background: rgba(60, 56, 54, 0.3) !important;
+  border-radius: 0.75rem !important;
+  padding: 1.5rem 2rem !important;
+  margin-bottom: 1.25rem !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.border-l-2:hover {
+  background: rgba(60, 56, 54, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Better prose spacing */
 .prose {
-  max-width: 75ch;
+  max-width: 70ch;
   line-height: 1.75;
 }
 
 .prose p {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .prose h2 {
-  margin-top: 2.5em;
-  margin-bottom: 1em;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
 }
 
 .prose h3 {
-  margin-top: 2em;
-  margin-bottom: 0.75em;
-}
-
-/* Card spacing */
-.space-y-3 > * + * {
-  margin-top: 1.5rem !important;
-}
-
-/* Section spacing */
-section {
-  padding: 2rem 1.5rem;
-}
-
-/* Update sections on project pages */
-.mt-12 {
-  margin-top: 3rem !important;
-  padding: 0 1.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2.5rem !important;
-}
-
-/* List items breathing room */
-.border-l-2 {
-  padding: 1rem 1.25rem !important;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
-/* Project link box at top of blog posts */
-.border-l-4 {
-  padding: 1.25rem 1.5rem !important;
-  border-radius: 0.25rem;
+.prose ul, .prose ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
 }
 
-/* Hero/Header background blur effect */
+.prose li {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Softer date styling */
+.text-neutral-600,
+.dark\:text-neutral-400 {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Hero/Header - more subtle */
 .hero-background {
   position: relative;
   overflow: hidden;
+  border-radius: 0 0 1.5rem 1.5rem;
 }
 
 .hero-background::before {
@@ -197,7 +250,7 @@ section {
   right: 0;
   bottom: 0;
   background-image: inherit;
-  filter: blur(8px);
+  filter: blur(12px);
   transform: scale(1.1);
   z-index: -1;
 }
@@ -209,12 +262,26 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(40, 40, 40, 0.75);
+  background: linear-gradient(to bottom, rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.85));
   z-index: 0;
 }
 
 .hero-background > * {
   position: relative;
   z-index: 1;
+}
+
+/* Remove extra padding overrides */
+.max-w-prose {
+  padding: 0;
+}
+
+.min-w-0.min-h-0.max-w-fit {
+  padding: 0;
+}
+
+/* Space-y utility fix */
+.space-y-3 > * + * {
+  margin-top: 1.25rem !important;
 }
 
