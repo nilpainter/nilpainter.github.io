@@ -1,104 +1,153 @@
-/* Clean, Minimal, Readable Design */
+/* Elegant Artist Portfolio - Gallery Aesthetic */
 
 :root {
-  /* Simple, calming color palette */
-  --bg-main: #fafafa;
-  --bg-content: #ffffff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #666666;
-  --text-tertiary: #999999;
-  --accent: #e07a4f;
-  --accent-hover: #c76640;
-  --border: #e5e5e5;
+  --cream: #faf8f5;
+  --warm-white: #ffffff;
+  --text-dark: #2d2d2d;
+  --text-mid: #5a5a5a;
+  --text-light: #8a8a8a;
+  --accent-rust: #c7653b;
+  --accent-warm: #a8503f;
+  --border-subtle: #e8e4df;
 }
 
-/* Clean background */
+/* Elegant background */
 body {
-  background-color: var(--bg-main) !important;
-  color: var(--text-primary) !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.7;
+  background-color: var(--cream) !important;
+  color: var(--text-dark) !important;
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.8;
   font-size: 16px;
 }
 
 html {
-  background-color: var(--bg-main) !important;
+  background-color: var(--cream) !important;
 }
 
-/* Clean header */
-header {
-  background-color: var(--bg-content) !important;
-  border-bottom: 1px solid var(--border);
-  padding: 1.5rem 0;
-}
-
-/* Site title - should be dark, not orange */
-header h1 a,
-header .site-title a,
-header a[rel="home"] {
-  color: var(--text-primary) !important;
-  font-weight: 600;
-}
-
-header h1 a:hover,
-header .site-title a:hover,
-header a[rel="home"]:hover {
-  color: var(--text-primary) !important;
-}
-
-/* Typography - clean and readable */
+/* Elegant serif typography */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary) !important;
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 0;
+  font-family: "Georgia", "Palatino", serif;
+  color: var(--text-dark) !important;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
+/* Body text - serif */
 p {
-  color: var(--text-secondary) !important;
-  margin: 0 0 1.5rem 0;
+  color: var(--text-mid) !important;
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
-/* Clean, simple links */
+/* Links - warm rust color */
 a {
-  color: var(--accent) !important;
+  color: var(--text-dark) !important;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--accent-hover) !important;
+  color: var(--accent-rust) !important;
 }
 
-/* Navigation */
+/* Navigation - minimal, elegant */
+header {
+  background-color: var(--warm-white) !important;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.5rem 0;
+}
+
 nav a {
-  color: var(--text-primary) !important;
-  font-weight: 500;
+  color: var(--text-mid) !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
 }
 
 nav a:hover {
-  color: var(--accent) !important;
+  color: var(--text-dark) !important;
 }
 
 /* Main content */
 main {
   background-color: transparent !important;
-  padding: 3rem 0;
-  max-width: 100%;
+  padding: 0;
+}
+
+/* Hero section styling */
+.hero-section {
+  background-color: var(--warm-white);
+  padding: 5rem 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Cards with images */
+.image-card {
+  background-color: var(--warm-white);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-subtle);
+}
+
+.image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.image-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Section labels */
+.section-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-rust);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--text-dark);
+  color: var(--warm-white) !important;
+  padding: 0.875rem 2rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-rust);
+  color: var(--warm-white) !important;
 }
 
 /* Code blocks - clean */
