@@ -11,17 +11,28 @@
   --border-subtle: #e8e4df;
 }
 
-/* Elegant background */
-body {
-  background-color: var(--cream) !important;
-  color: var(--text-dark) !important;
-  font-family: "Georgia", "Times New Roman", serif;
-  line-height: 1.8;
-  font-size: 16px;
+/* FORCE CREAM BACKGROUND EVERYWHERE */
+body,
+html,
+#main-content,
+main,
+article,
+section,
+div,
+.prose,
+.article-content,
+.max-w-prose,
+header,
+.bg-neutral,
+.dark\:bg-neutral-800 {
+  background-color: #faf8f5 !important;
+  background: #faf8f5 !important;
 }
 
-html {
-  background-color: var(--cream) !important;
+/* Only white backgrounds on cards (homepage) */
+.image-card,
+article.image-card {
+  background-color: #ffffff !important;
 }
 
 /* Elegant serif typography */
