@@ -100,6 +100,16 @@ main {
   max-width: 100% !important;
 }
 
+/* Kill white backgrounds on simple pages */
+article.max-w-full,
+.prose {
+  background-color: transparent !important;
+}
+
+article {
+  background-color: transparent !important;
+}
+
 /* Override theme's max-width constraints */
 .max-w-7xl,
 .max-w-6xl,
