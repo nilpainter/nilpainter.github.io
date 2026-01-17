@@ -1,136 +1,128 @@
-/* Sketchbook Paper Texture Theme */
+/* Clean, Minimal, Readable Design */
 
 :root {
-  /* Paper colors - warm cream/beige */
-  --paper-bg: #f4f1e8;           /* warm cream paper */
-  --paper-aged: #ebe5d5;         /* slightly aged paper */
-  --ink-dark: #2d2d2d;           /* dark ink */
-  --ink-medium: #4a4a4a;         /* medium ink */
-  --ink-light: #6d6d6d;          /* light ink/pencil */
-  --accent-orange: #d4682a;      /* burnt orange - paint accent */
-  --accent-rust: #a8503f;        /* rust/terra cotta */
-  
-  /* Subtle shadows for depth */
-  --shadow-soft: rgba(0, 0, 0, 0.08);
+  /* Simple, calming color palette */
+  --bg-main: #fafafa;
+  --bg-content: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --accent: #e07a4f;
+  --accent-hover: #c76640;
+  --border: #e5e5e5;
 }
 
-/* Paper texture background */
+/* Clean background */
 body {
-  background-color: var(--paper-bg) !important;
-  color: var(--ink-dark) !important;
-  background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  background-repeat: repeat;
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 html {
-  background-color: var(--paper-bg) !important;
+  background-color: var(--bg-main) !important;
 }
 
-/* Text colors - ink on paper */
+/* Clean header */
+header {
+  background-color: var(--bg-content) !important;
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+/* Typography - clean and readable */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--ink-dark) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
 }
 
-p, li, span, div {
-  color: var(--ink-medium) !important;
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Links - burnt orange like paint splatters */
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  color: var(--text-secondary) !important;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Clean, simple links */
 a {
-  color: var(--accent-orange) !important;
+  color: var(--accent) !important;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--accent-rust) !important;
-  text-decoration: underline;
-}
-
-/* Header - slightly darker paper */
-header {
-  background-color: var(--paper-aged) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 4px var(--shadow-soft);
+  color: var(--accent-hover) !important;
 }
 
 /* Navigation */
 nav a {
-  color: var(--accent-orange) !important;
+  color: var(--text-primary) !important;
+  font-weight: 500;
 }
 
 nav a:hover {
-  color: var(--accent-rust) !important;
+  color: var(--accent) !important;
 }
 
-/* Main content area */
+/* Main content */
 main {
   background-color: transparent !important;
-  min-height: 100vh;
-  padding: 4rem 0;
+  padding: 3rem 0;
+  max-width: 100%;
 }
 
-/* Cards/sections - like paper on paper */
-article, .card {
-  background-color: rgba(255, 255, 255, 0.6) !important;
-  box-shadow: 0 2px 8px var(--shadow-soft);
-}
-
-/* Code blocks - like handwritten notes */
-code, pre {
-  background-color: rgba(0, 0, 0, 0.05) !important;
-  color: var(--ink-dark) !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
+/* Code blocks - clean */
+code {
+  background-color: #f5f5f5 !important;
+  color: var(--text-primary) !important;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
 }
 
 pre {
+  background-color: #f5f5f5 !important;
   padding: 1.5rem;
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
 }
 
-/* Better Typography - Handwritten feel */
-h1, h2, h3, h4, h5, h6 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-  margin-top: 2.5rem;
-  margin-bottom: 1.25rem;
-  color: var(--ink-dark) !important;
-}
-
-h1 {
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  margin-top: 0;
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 1.875rem;
-  margin-top: 3rem;
-}
-
-/* Dates and subtle text */
+/* Dates and meta */
 time, .text-sm {
-  color: var(--ink-light) !important;
+  color: var(--text-tertiary) !important;
   font-size: 0.875rem;
+  font-weight: 400;
 }
 
-/* Journal entry borders - like sketched lines */
-.journal-entry {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+/* Clean article spacing */
+article {
+  background-color: var(--bg-content) !important;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
 }
 
-/* Hover effects - subtle lift like turning a page */
-.journal-entry a:hover h2 {
-  color: var(--accent-orange) !important;
-  transform: translateX(2px);
-  transition: all 0.2s ease;
+article:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
 }
 
 /* Consistent Spacing System */
