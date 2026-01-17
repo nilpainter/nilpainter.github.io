@@ -1,134 +1,136 @@
-/* Gruvbox-inspired warm dark theme for Nil Painter */
+/* Sketchbook Paper Texture Theme */
 
 :root {
-  /* Gruvbox Dark Background Colors */
-  --color-neutral: #282828;        /* dark0_hard */
-  --color-neutral-50: #1d2021;     /* dark0_hard (darker) */
-  --color-neutral-100: #282828;    /* dark0 */
-  --color-neutral-200: #32302f;    /* dark0_soft */
-  --color-neutral-300: #3c3836;    /* dark1 */
-  --color-neutral-400: #504945;    /* dark2 */
-  --color-neutral-500: #665c54;    /* dark3 */
-  --color-neutral-600: #7c6f64;    /* dark4 */
-  --color-neutral-700: #928374;    /* gray */
-  --color-neutral-800: #a89984;    /* light4 */
-  --color-neutral-900: #bdae93;    /* light3 */
-
-  /* Gruvbox Foreground Colors */
-  --color-neutral-fg: #ebdbb2;     /* light1 - off-white text */
-
-  /* Warm Orange/Red Accents */
-  --color-primary-100: #fb4934;    /* bright_red */
-  --color-primary-200: #fb4934;
-  --color-primary-300: #fe8019;    /* bright_orange - main accent */
-  --color-primary-400: #fe8019;
-  --color-primary-500: #fe8019;
-  --color-primary-600: #d65d0e;    /* neutral_orange */
-  --color-primary-700: #d65d0e;
-  --color-primary-800: #af3a03;    /* faded_orange */
-  --color-primary-900: #af3a03;
-
-  /* Secondary - Warm Yellow */
-  --color-secondary-100: #fabd2f;  /* bright_yellow */
-  --color-secondary-200: #fabd2f;
-  --color-secondary-300: #fabd2f;
-  --color-secondary-400: #fabd2f;
-  --color-secondary-500: #d79921;  /* neutral_yellow */
-  --color-secondary-600: #d79921;
-  --color-secondary-700: #b57614;  /* faded_yellow */
-  --color-secondary-800: #b57614;
-  --color-secondary-900: #b57614;
-
-  /* Success - Green */
-  --color-success-100: #b8bb26;    /* bright_green */
-  --color-success-200: #b8bb26;
-  --color-success-300: #98971a;    /* neutral_green */
-  --color-success-400: #98971a;
-  --color-success-500: #79740e;    /* faded_green */
-  --color-success-600: #79740e;
-  --color-success-700: #79740e;
-
-  /* Warm wood tones for links and accents */
-  --color-link: #fe8019;           /* bright orange */
-  --color-link-hover: #fabd2f;     /* bright yellow */
-
-  /* Code blocks */
-  --color-code-bg: #1d2021;        /* darker background */
-  --color-code-fg: #ebdbb2;        /* off-white text */
+  /* Paper colors - warm cream/beige */
+  --paper-bg: #f4f1e8;           /* warm cream paper */
+  --paper-aged: #ebe5d5;         /* slightly aged paper */
+  --ink-dark: #2d2d2d;           /* dark ink */
+  --ink-medium: #4a4a4a;         /* medium ink */
+  --ink-light: #6d6d6d;          /* light ink/pencil */
+  --accent-orange: #d4682a;      /* burnt orange - paint accent */
+  --accent-rust: #a8503f;        /* rust/terra cotta */
+  
+  /* Subtle shadows for depth */
+  --shadow-soft: rgba(0, 0, 0, 0.08);
 }
 
-/* FORCE Gruvbox background and text colors */
+/* Paper texture background */
 body {
-  background-color: #282828 !important;
-  color: #ebdbb2 !important;
+  background-color: var(--paper-bg) !important;
+  color: var(--ink-dark) !important;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 html {
-  background-color: #282828 !important;
+  background-color: var(--paper-bg) !important;
 }
 
-/* Ensure links have warm orange color */
+/* Text colors - ink on paper */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink-dark) !important;
+}
+
+p, li, span, div {
+  color: var(--ink-medium) !important;
+}
+
+/* Links - burnt orange like paint splatters */
 a {
-  color: #fe8019 !important;
+  color: var(--accent-orange) !important;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #fabd2f !important;
+  color: var(--accent-rust) !important;
+  text-decoration: underline;
 }
 
-/* Header styling */
+/* Header - slightly darker paper */
 header {
-  background-color: #1d2021;
-  color: #ebdbb2 !important;
+  background-color: var(--paper-aged) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--shadow-soft);
 }
 
-/* Navigation links */
+/* Navigation */
 nav a {
-  color: #fe8019 !important;
+  color: var(--accent-orange) !important;
 }
 
 nav a:hover {
-  color: #fabd2f !important;
+  color: var(--accent-rust) !important;
 }
 
-/* Card backgrounds */
+/* Main content area */
+main {
+  background-color: transparent !important;
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+/* Cards/sections - like paper on paper */
 article, .card {
-  background-color: #282828;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 2px 8px var(--shadow-soft);
 }
 
-/* Code blocks with darker background */
+/* Code blocks - like handwritten notes */
 code, pre {
-  background-color: var(--color-code-bg);
-  color: var(--color-code-fg);
-  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: var(--ink-dark) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
 }
 
 pre {
   padding: 1.5rem;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Better Typography - Light and Airy */
+/* Better Typography - Handwritten feel */
 h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.3;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
+  color: var(--ink-dark) !important;
 }
 
 h1 {
-  font-weight: 200;
-  letter-spacing: -0.03em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-top: 0;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.875rem;
   margin-top: 3rem;
+}
+
+/* Dates and subtle text */
+time, .text-sm {
+  color: var(--ink-light) !important;
+  font-size: 0.875rem;
+}
+
+/* Journal entry borders - like sketched lines */
+.journal-entry {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hover effects - subtle lift like turning a page */
+.journal-entry a:hover h2 {
+  color: var(--accent-orange) !important;
+  transform: translateX(2px);
+  transition: all 0.2s ease;
 }
 
 /* Consistent Spacing System */

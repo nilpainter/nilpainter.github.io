@@ -1,16 +1,10 @@
 {{ define "main" }}
 <div class="max-w-3xl mx-auto px-6 py-12">
   
-  {{/* Optional hero/header image */}}
-  {{ if .Site.Params.homepage.homepageImage }}
-  <div class="mb-16 -mx-6">
-    <img src="{{ .Site.Params.homepage.homepageImage | relURL }}" alt="{{ .Site.Title }}" class="w-full h-64 object-cover opacity-20 rounded-none">
-  </div>
-  {{ end }}
-
-  {{/* Subtle "Recent" label */}}
-  <div class="mb-12">
-    <p class="text-xs uppercase tracking-widest opacity-40 font-light">Recent Entries</p>
+  {{/* Sketchbook title/header */}}
+  <div class="mb-16 pb-8 border-b-2 border-ink-light" style="border-color: rgba(0,0,0,0.15);">
+    <h1 class="text-5xl font-light mb-2" style="color: #2d2d2d;">{{ .Site.Title }}</h1>
+    <p class="text-base opacity-60" style="color: #4a4a4a;">Artist's Journal</p>
   </div>
 
   {{/* Journal entries */}}
@@ -18,29 +12,29 @@
     {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
     {{ $limit := .Site.Params.homepage.showRecentItems | default 10 }}
     {{ range first $limit $pages }}
-      <article class="journal-entry">
-        {{/* Date */}}
-        <time datetime="{{ .Date.Format "2006-01-02" }}" class="block text-sm opacity-50 mb-3 font-light tracking-wide">
+      <article class="journal-entry pb-12 mb-12">
+        {{/* Date - handwritten style */}}
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="block text-sm mb-3 font-light tracking-wide" style="color: #6d6d6d;">
           {{ .Date.Format "January 2, 2006" }}
         </time>
         
-        {{/* Title */}}
-        <h2 class="text-3xl font-light mb-4 leading-tight">
-          <a href="{{ .RelPermalink }}" class="text-neutral-100 hover:text-primary-400 transition-colors no-underline">
+        {{/* Title - ink on paper */}}
+        <h2 class="text-3xl font-normal mb-4 leading-tight">
+          <a href="{{ .RelPermalink }}" class="no-underline" style="color: #2d2d2d;">
             {{ .Title }}
           </a>
         </h2>
         
         {{/* Summary */}}
         {{ if .Summary }}
-        <div class="text-lg leading-relaxed opacity-80">
+        <div class="text-base leading-relaxed" style="color: #4a4a4a;">
           {{ .Summary }}
         </div>
         {{ end }}
         
-        {{/* Read more link - subtle */}}
-        <a href="{{ .RelPermalink }}" class="inline-block mt-4 text-sm text-primary-400 hover:text-primary-300 font-light tracking-wide">
-          Continue reading →
+        {{/* Read more - pencil sketch style */}}
+        <a href="{{ .RelPermalink }}" class="inline-block mt-4 text-sm font-light tracking-wide" style="color: #d4682a;">
+          continue →
         </a>
       </article>
     {{ end }}
