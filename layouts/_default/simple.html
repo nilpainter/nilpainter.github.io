@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<article style="max-width: 1000px; margin: 0 auto; padding: 4rem 3rem;">
+  
+  {{/* Page Header */}}
+  <header style="text-align: center; margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid #e8e4df;">
+    <h1 style="font-family: Georgia, serif; font-size: 3.5rem; font-weight: 300; color: #2d2d2d; margin-bottom: 1rem;">
+      {{ .Title }}
+    </h1>
+    {{ if .Params.description }}
+    <p style="color: #8a8a8a; font-size: 1rem; font-style: italic; font-family: Georgia, serif;">
+      {{ .Params.description }}
+    </p>
+    {{ end }}
+  </header>
+
+  {{/* Content */}}
+  <div style="max-width: 42rem; margin: 0 auto; font-family: Georgia, serif; font-size: 1.0625rem; line-height: 1.8; color: #5a5a5a;">
+    {{ .Content }}
+  </div>
+
+</article>
+
+<style>
+  /* Style the content from markdown */
+  article h2 {
+    font-family: Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #2d2d2d;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  article p {
+    margin-bottom: 1.5rem;
+  }
+  
+  article strong {
+    color: #2d2d2d;
+    font-weight: 500;
+  }
+  
+  article a {
+    color: #c7653b;
+    text-decoration: none;
+  }
+  
+  article a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+{{ end }}
+
