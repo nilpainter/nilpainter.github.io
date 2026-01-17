@@ -4,8 +4,6 @@ description: "A painter's pursuit of light and form"
 layout: "simple"
 ---
 
-<div style="max-width: 42rem; margin: 0 auto; padding: 4rem 2rem;">
-
 <p style="font-family: Georgia, serif; font-size: 1.25rem; line-height: 1.8; color: #5a5a5a; margin-bottom: 2rem; font-style: italic;">
 A painter's pursuit of light and form, documented through layers of pigment and thought.
 </p>
@@ -25,6 +23,4 @@ I work primarily in oils, building up layers over days and weeks. The underpaint
 ## Get in Touch
 
 If you'd like to discuss commissions, exhibitions, or just talk about painting, reach out at **studio@nilpainter.art**
-
-</div>
 
