@@ -44,10 +44,19 @@ mainSections = ["blog", "projects"]
   showTableOfContents = false
   showTaxonomies = false
   showWordCount = false
-  showComments = false
+  showComments = true  # Enable comments
   seriesOpened = true
   showRelatedContent = false
   relatedContentLimit = 10
+
+# Cusdis Comments Configuration
+[comments]
+  enabled = true
+  provider = "cusdis"
+
+[comments.cusdis]
+  host = "https://cusdis.com"  # or your self-hosted URL
+  appId = "YOUR_CUSDIS_APP_ID"  # Get this from cusdis.com dashboard
 
 # List settings
 [list]
